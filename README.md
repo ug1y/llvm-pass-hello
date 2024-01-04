@@ -2,6 +2,8 @@
 
 A simple Hello World for LLVM pass
 
+关于llvm是什么，pass如何编写，推荐学习[LLVM Pass入门导引](https://zhuanlan.zhihu.com/p/122522485)
+
 ## Requirement:
 
 - Ubuntu 22.04
