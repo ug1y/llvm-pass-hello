@@ -14,3 +14,15 @@ wget https://apt.llvm.org/llvm.sh
 chmod +x llvm.sh
 sudo ./llvm.sh 13 all
 ```
+
+## Build
+
+把仓库clone到本地，进入到`llvm-hello-pass`目录下，新建build目录并编译
+```bash
+git clone https://github.com/ug1y/llvm-pass-hello.git
+cd llvm-pass-hello
+mkdir build
+cd build
+cmake ..
+make
+```
