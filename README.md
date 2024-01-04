@@ -15,6 +15,8 @@ A simple Hello World for LLVM pass
 wget https://apt.llvm.org/llvm.sh
 chmod +x llvm.sh
 sudo ./llvm.sh 13 all
+export CC=clang-13
+export CXX=clang++-13
 ```
 
 ## Build
@@ -29,7 +31,7 @@ cmake ..
 make
 ```
 
-本仓库参考了[llvm-pass-skeleton](https://github.com/sampsyo/llvm-pass-skeleton)项目，基本结构都是一样，但是这个项目的pass我没有实验成功，所以才写了这个项目。
+本仓库参考了[llvm-pass-skeleton](https://github.com/sampsyo/llvm-pass-skeleton)项目，基本结构都是一样，但是这个项目的pass我没有实验成功，所以才有这个项目。
 
 ## Test
 
