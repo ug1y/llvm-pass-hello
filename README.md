@@ -4,7 +4,7 @@ A simple Hello World for LLVM pass
 
 关于llvm是什么，pass如何编写，推荐学习[LLVM Pass入门导引](https://zhuanlan.zhihu.com/p/122522485)。
 
-## Requirement:
+## 依赖
 
 - Ubuntu 22.04
 - LLVM 13
@@ -19,7 +19,7 @@ export CC=clang-13
 export CXX=clang++-13
 ```
 
-## Build
+## 构建
 
 把仓库clone到本地，进入到`llvm-hello-pass`目录下，新建build目录并编译。
 ```bash
@@ -33,5 +33,5 @@ make
 
 本仓库参考了[llvm-pass-skeleton](https://github.com/sampsyo/llvm-pass-skeleton)项目，基本结构都是一样，但是这个项目的pass我没有实验成功，所以才有这个项目。
 
-## Test
+## 测试
 
