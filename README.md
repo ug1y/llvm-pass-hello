@@ -8,7 +8,7 @@ A simple Hello World for LLVM pass
 
 - Ubuntu 22.04
 - LLVM 13
-- clang 13
+- Clang 13
 
 在Ubuntu系统里使用脚本安装llvm全套组件。
 ```bash
@@ -21,7 +21,7 @@ export CXX=clang++-13
 
 ## 构建
 
-把仓库clone到本地，进入到`llvm-hello-pass`目录下，新建build目录并编译。
+把项目clone到本地，进入到`llvm-hello-pass`目录下，新建`build`目录并编译。
 ```bash
 git clone https://github.com/ug1y/llvm-pass-hello.git
 cd llvm-pass-hello
@@ -31,7 +31,7 @@ cmake ..
 make
 ```
 
-本仓库参考了[llvm-pass-skeleton](https://github.com/sampsyo/llvm-pass-skeleton)项目，基本结构都是一样，但是这个项目的pass我没有实验成功，所以才有这个项目。
+编译成功后会生成库文件`build/hello/libHelloPass.so`，对应的pass源码在`hello/Hello.cpp`文件中。本项目参考了[llvm-pass-skeleton](https://github.com/sampsyo/llvm-pass-skeleton)项目，基本结构都是一样，但是这个项目的pass我没有实验成功，所以才有这个项目。
 
 ## 测试
 
