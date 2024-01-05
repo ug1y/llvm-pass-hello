@@ -35,4 +35,9 @@ make
 
 ## 测试
 
-在源码`hello/Hello.cpp`文件中注册了两种pass，一种是通过`opt`运行，另一种是注册pass manager通过`clang`运行，关于如何运行编写好的pass，可以参考这篇[LLVM入门教程至Pass编写](https://blog.yuuoniy.cn/posts/llvm-pass-1/)。
+在源码`hello/Hello.cpp`文件中注册了两种pass，一种是通过`opt`运行，另一种是注册pass manager通过`clang`运行，关于如何运行编写好的pass，可以阅读这篇[LLVM入门教程至Pass编写](https://blog.yuuoniy.cn/posts/llvm-pass-1/)。
+
+首先，可以通过`opt`的`-load`选项动态加载库文件，并使用`-help`命令查看编写的pass。
+```bash
+opt-13 -load build/hello/libHelloPass.so -help | grep hello
+```
