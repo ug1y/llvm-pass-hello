@@ -31,7 +31,8 @@ cmake ..
 make
 ```
 
-编译成功后会生成库文件`build/hello/libHelloPass.so`，对应的pass源码在`hello/Hello.cpp`文件中。本项目参考了[llvm-pass-skeleton](https://github.com/sampsyo/llvm-pass-skeleton)项目，基本结构都是一样，但是这个项目的pass我没有实验成功，所以才有这个项目。
+编译成功后会生成库文件`build/hello/libHelloPass.so`，本项目参考了[llvm-pass-skeleton](https://github.com/sampsyo/llvm-pass-skeleton)项目，源码结构是一样，但是这个项目的pass我没有通过。
 
 ## 测试
 
+在源码`hello/Hello.cpp`文件中注册了两种pass，一种是通过`opt`运行，另一种是注册pass manager通过`clang`运行，关于如何运行编写好的pass，可以参考这篇[LLVM入门教程至Pass编写](https://blog.yuuoniy.cn/posts/llvm-pass-1/)。
