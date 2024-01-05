@@ -49,7 +49,7 @@ opt-13 -load build/hello/libHelloPass.so -help | grep hello
 clang-13 -c -emit-llvm test.c
 ```
 
-由于编写的pass仍然使用旧版的pass manager，所以在使用`opt`运行时需要加上`-enable-new-pm=0`选项，详情可以浏览一下[网上论坛](https://groups.google.com/g/llvm-dev/c/kQYV9dCAfSg)。运行pass的命令如下：
+由于编写的pass仍然使用旧版的pass manager，所以在使用`opt`运行时需要加上`-enable-new-pm=0`选项，在这个[网上论坛](https://groups.google.com/g/llvm-dev/c/kQYV9dCAfSg)里找到的。运行pass的命令如下：
 ```bash
 opt-13 -enable-new-pm=0 -load build/hello/libHelloPass.so -hello test.bc -o /dev/null
 ```
@@ -63,7 +63,7 @@ Hello: main
 
 ### clang运行
 
-可以直接使用`clang`的`-Xclang`选项加载库文件，同样的需要加上`-flegacy-pass-manager`选项来使用旧版的pass manager，可参考[博客](https://www.cs.cornell.edu/~asampson/blog/clangpass.html),该选项在Clang的13和14版本中还保留着，在之后的版本就去掉了。
+可以直接使用`clang`的`-Xclang`选项加载库文件，同样的需要加上`-flegacy-pass-manager`选项来使用旧版的pass manager，在这篇[博客](https://www.cs.cornell.edu/~asampson/blog/clangpass.html)里找到的，并且该选项在Clang的13和14版本中还保留着，在之后的版本就去掉了。
 ```bash
 clang-13 -flegacy-pass-manager -Xclang -load -Xclang build/hello/libHelloPass.so test.c -o test
 ```
