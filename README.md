@@ -41,3 +41,13 @@ make
 ```bash
 opt-13 -load build/hello/libHelloPass.so -help | grep hello
 ```
+
+然后，编写一个测试程序`test.c`，并将其编译成LLVM IR。
+```bash
+clang-13 -c -emit-llvm test.c
+```
+
+由于编写的pass仍然使用旧版的pass manger，所以在使用`opt`运行时需要加上`-enable-new-pm=0`选项，详情可以浏览一下[网上论坛](https://groups.google.com/g/llvm-dev/c/kQYV9dCAfSg)。
+```bash
+opt-13 -enable-new-pm=0 -load build/hello/libHelloPass.so -hello test.bc -o /dev/null
+```
