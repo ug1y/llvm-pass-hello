@@ -47,7 +47,14 @@ opt-13 -load build/hello/libHelloPass.so -help | grep hello
 clang-13 -c -emit-llvm test.c
 ```
 
-由于编写的pass仍然使用旧版的pass manger，所以在使用`opt`运行时需要加上`-enable-new-pm=0`选项，详情可以浏览一下[网上论坛](https://groups.google.com/g/llvm-dev/c/kQYV9dCAfSg)。
+由于编写的pass仍然使用旧版的pass manger，所以在使用`opt`运行时需要加上`-enable-new-pm=0`选项，详情可以浏览一下[网上论坛](https://groups.google.com/g/llvm-dev/c/kQYV9dCAfSg)。运行pass的命令如下：
 ```bash
 opt-13 -enable-new-pm=0 -load build/hello/libHelloPass.so -hello test.bc -o /dev/null
+```
+
+运行结果：
+```bash
+Hello: func2
+Hello: func
+Hello: main
 ```
